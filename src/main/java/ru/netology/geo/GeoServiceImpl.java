@@ -31,6 +31,11 @@ public class GeoServiceImpl implements GeoService {
      * Метод определяет локацию по координатам
      */
     public Location byCoordinates(double latitude, double longitude) {
-        throw new RuntimeException("Not implemented");
+        if (latitude == 40.714 && longitude == -74.006) {
+            return new Location("New York", Country.USA, " 10th Avenue", 32);
+        } else if (latitude == 55.450 && longitude == 37.365) {
+            return new Location("Moscow", Country.RUSSIA, null, 0);
+        }
+        return null;
     }
 }
