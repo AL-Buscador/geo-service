@@ -51,8 +51,8 @@ public class MessageSenderImplTest {
 //        Mockito.when(geoService.byIp("96.44.183.149"))
 //                .thenReturn(new Location("New York", Country.USA, "10th avenue", 32));
 
-        Assertions.assertEquals(new Location("Moscow", Country.RUSSIA, "Lenina", 15),
-                geoService.byIp("172.0.32.11"));
+        Assertions.assertEquals(Country.RUSSIA,
+                geoService.byIp("172.0.32.11").getCountry());
 
 //        Assertions.assertEquals(new Location("New York", Country.USA, "10th avenue", 32),
 //                geoService.byIp("96.44.183.149"));
@@ -77,8 +77,8 @@ public class MessageSenderImplTest {
 //        Mockito.when(geoService.byCoordinates(40.714, 70.006))
 //                .thenReturn(new Location("New York", Country.USA, "10th avenue", 32));
 
-        Assertions.assertEquals(new Location("Moscow", Country.RUSSIA, "Lenina", 15),
-                geoService.byCoordinates(55.450, 37.365));
+        Assertions.assertEquals(Country.RUSSIA,
+                geoService.byCoordinates(55.450, 37.365).getCountry());
 
 //        Assertions.assertEquals(new Location("New York", Country.USA, "10th avenue", 32),
 //                geoService.byCoordinates(407.14, 70.006));
